@@ -1,0 +1,39 @@
+Print("GnapGnapMotherfucker") 
+
+local EmoteID = 101756939256397
+
+local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+ScreenGui.Name = "VelocityEmoteGUI"
+
+local MainFrame = Instance.new("Frame", ScreenGui)
+MainFrame.Size = UDim2.new(0, 250, 0, 100)
+MainFrame.Position = UDim2.new(0.5, -125, 0.2, 0)
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.BorderSizePixel = 0
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+local Title = Instance.new("TextLabel", MainFrame)
+Title.Size = UDim2.new(1, 0, 0, 30)
+Title.BackgroundTransparency = 1
+Title.Text = "Velocity Emote"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 20
+
+local EmoteButton = Instance.new("TextButton", MainFrame)
+EmoteButton.Size = UDim2.new(0.8, 0, 0, 40)
+EmoteButton.Position = UDim2.new(0.1, 0, 0.5, 0)
+EmoteButton.Text = "Play Emote"
+EmoteButton.TextColor3 = Color3.new(1, 1, 1)
+EmoteButton.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+EmoteButton.Font = Enum.Font.GothamBold
+EmoteButton.TextSize = 18
+EmoteButton.AutoButtonColor = true
+EmoteButton.BorderSizePixel = 0
+EmoteButton.MouseButton1Click:Connect(function()
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://" .. EmoteID
+    local LoadAnim = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Anim)
+    LoadAnim:Play()
+end)
