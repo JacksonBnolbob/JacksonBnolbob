@@ -1,3 +1,4 @@
+--by JacksonBNolB0b
 local EmoteID = 101756939256397
 
 local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
